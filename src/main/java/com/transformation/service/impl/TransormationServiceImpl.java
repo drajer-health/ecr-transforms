@@ -50,7 +50,7 @@ public class TransormationServiceImpl implements TransformationService {
 
 		try {
 
-			xsltFile = ResourceUtils.getFile("classpath:hl7-xml-transforms/transforms/fhir2cda-r4/fhir2cda.xslt");
+			xsltFile = ResourceUtils.getFile("classpath:latest-files/transforms/fhir2cda-r4/fhir2cda.xslt");
 
 			inputSourceXmlFile = File.createTempFile(tempFileName.toString(), "tmp");
 
@@ -90,7 +90,7 @@ public class TransormationServiceImpl implements TransformationService {
 			inputSourceXmlFile = File.createTempFile(tempFileName.toString(), "tmp");
 
 			xsltFile = ResourceUtils
-					.getFile("classpath:hl7-xml-transforms/transforms/cda2fhir-r4/SaxonPE-cda2fhir.xslt");
+					.getFile("classpath:latest-files/transforms/cda2fhir-r4/cda2fhir.xslt");
 
 			FileOutputStream out = new FileOutputStream(inputSourceXmlFile);
 
@@ -120,12 +120,12 @@ public class TransormationServiceImpl implements TransformationService {
 
 		try {
 
-			String[] commandLineArguments = new String[4];
+			String[] commandLineArguments = new String[3];
 
 			commandLineArguments[0] = "-xsl:" + xslFilePath;
 			commandLineArguments[1] = "-s:" + sourceXml;
-			commandLineArguments[2] = "-license:on";
-			commandLineArguments[3] = "-o:" + outputFileName + ".xml";
+			// commandLineArguments[2] = "-license:on";
+			commandLineArguments[2] = "-o:" + outputFileName + ".xml";
 
 			Transform.main(commandLineArguments);
 

@@ -48,8 +48,13 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- <dependency> <groupId>net.sf.saxon</groupId> <artifactId>Saxon-HE</artifactId> 
-			<version>10.6</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE -->
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<version>11.2</version>
+		</dependency>
+
 
 	</dependencies>
 
